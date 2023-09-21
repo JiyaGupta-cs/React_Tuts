@@ -6,7 +6,7 @@ let name = "Jiya";
 function App() {
   return (
     <>
-      <Navbar/>
+      <Navbar title="Text Utils" abouttext="AboutText" />
     </>
   );
 }
