@@ -5,31 +5,34 @@ export default function TextForm(props) {
   const [text, setText] = useState('');
 
   const handleUpCLick = () => {
-    console.log("Button was clicked", text);
+    // console.log("Button was clicked", text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to Uppercase","success");
   }
 
   const handleLowerCLick = () => {
     console.log("Button was clicked", text);
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to Lowercase","success");
   }
 
   const handleOnChange = (event) => {
     console.log("Change");
     setText(event.target.value);
-    // console.log("text=",text);
   }
 
   const clearText = () => {
     console.log("Cleared");
     setText('');
+    props.showAlert("Cleared","success");
   }
 
   const speak = () => {
     let msg = new SpeechSynthesisUtterance(text);
     window.speechSynthesis.speak(msg);
+    props.showAlert("Speaking","success");
     const toogle = document.getElementById('toggle')
     if (toogle.textContent == "Speak") {
         toogle.innerHTML = "Stop"
@@ -46,13 +49,14 @@ export default function TextForm(props) {
     var text=document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied to Clipboard","success");
   }
 
   return (
     <>
 
       <div className="container" style={{backgroundColor:props.mode==='dark'?'#042743':'white', color:props.mode==='dark'?'white':'black'}}>
-        <h2>{props.heading}  {props.mode}</h2>
+        <h2>{props.heading}</h2>
         <textarea className="form-control my-3" id="myBox" style={{backgroundColor:props.mode==='light'?'white':'#CFE2FF', color:props.mode==='dark'?'white':'black'}} rows="8" value={text} onChange={handleOnChange}></textarea>
         <button className="btn btn-primary my-3 mx-1" onClick={handleLowerCLick}>Convert to Lowercase</button>
         <button className="btn btn-primary my-3 mx-1" onClick={handleUpCLick}>Convert to Uppercase</button>
