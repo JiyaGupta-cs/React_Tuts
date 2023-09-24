@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextTrove-A_Text_Analyzer/static/css/main.073c9b0a.css",
+    "main.js": "/TextTrove-A_Text_Analyzer/static/js/main.10f1e208.js",
+    "static/js/787.3bf0dcc2.chunk.js": "/TextTrove-A_Text_Analyzer/static/js/787.3bf0dcc2.chunk.js",
+    "index.html": "/TextTrove-A_Text_Analyzer/index.html",
+    "main.073c9b0a.css.map": "/TextTrove-A_Text_Analyzer/static/css/main.073c9b0a.css.map",
+    "main.10f1e208.js.map": "/TextTrove-A_Text_Analyzer/static/js/main.10f1e208.js.map",
+    "787.3bf0dcc2.chunk.js.map": "/TextTrove-A_Text_Analyzer/static/js/787.3bf0dcc2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.10f1e208.js"
+  ]
+}
