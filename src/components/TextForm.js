@@ -56,18 +56,18 @@ export default function TextForm(props) {
     <>
 
       <div className="container" style={{backgroundColor:props.mode==='dark'?'#042743':'white', color:props.mode==='dark'?'white':'black'}}>
-        <h2>{props.heading}</h2>
+        <h2 className='mb-4'>{props.heading}</h2>
         <textarea className="form-control my-3" id="myBox" style={{backgroundColor:props.mode==='light'?'white':'#CFE2FF', color:props.mode==='dark'?'white':'black'}} rows="8" value={text} onChange={handleOnChange}></textarea>
-        <button className="btn btn-primary my-3 mx-1" onClick={handleLowerCLick}>Convert to Lowercase</button>
-        <button className="btn btn-primary my-3 mx-1" onClick={handleUpCLick}>Convert to Uppercase</button>
-        <button className="btn btn-primary my-3 mx-1" onClick={clearText}>Clear Text</button>
+        <button className="btn btn-primary my-3 mx-1 my-1" onClick={handleLowerCLick}>Convert to Lowercase</button>
+        <button className="btn btn-primary my-3 mx-1 my-1" onClick={handleUpCLick}>Convert to Uppercase</button>
+        <button className="btn btn-primary my-3 mx-1 my-1" onClick={clearText}>Clear Text</button>
         <button type="submit" className="btn btn-primary mx-2 my-2"onClick={handleCopy}  id="toggle">Copy</button>
         <button type="submit" className="btn btn-warning mx-2 my-2"onClick={speak}  id="toggle">Speak</button>        
       </div>
       <div className="container my-3" style={{backgroundColor:props.mode==='dark'?'#042743':'white', color:props.mode==='dark'?'white':'black'}}>
         <h2>Your text summary</h2>
-        <p>{text.split(" ").length} words, {text.length} characters</p> 
-        <p> Time to read : {text.split(" ").length*0.008} words</p>
+        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words, {text.length} characters</p> 
+        <p> Time to read : {text.split(" ").filter((element)=>{return element.length!==0}).length*0.008} words</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:'Enter something to preview here'}</p>
       </div>
